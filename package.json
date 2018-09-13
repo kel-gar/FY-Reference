@@ -4,7 +4,8 @@
   "description": "An application that allows users to create, collaborate, and share wikis.",
   "main": "(src/server.js)",
   "scripts": {
-    "test": "export NODE_ENV=test && jasmine"
+    "test": "export NODE_ENV=test && jasmine",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,13 @@
   "bugs": {
     "url": "https://github.com/kel-gar/blocipedia-node/issues"
   },
-  "homepage": "https://github.com/kel-gar/blocipedia-node#readme"
+  "homepage": "https://github.com/kel-gar/blocipedia-node#readme",
+  "devDependencies": {
+    "jasmine": "^3.0.0",
+    "request": "^2.83.0"
+  },
+  "dependencies": {
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2"
+  }
 }
