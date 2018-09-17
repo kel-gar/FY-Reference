@@ -32,6 +32,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
+    "cryptiles": "^4.1.2",
     "dotenv": "^5.0.0",
     "ejs": "^2.5.7",
     "ethereumjs-wallet": "^0.6.0",
