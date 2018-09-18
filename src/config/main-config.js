@@ -17,8 +17,8 @@ module.exports = {
     app.use(logger('dev'));
     app.use(expressValidator());
     app.use(session({
-      secret: "but there are plenty of forks",
-      // secret: process.env.cookieSecret,
+      // secret: "but there are plenty of forks",
+      secret: process.env.cookieSecret,
       resave: false,
       saveUninitialized: false,
       cookie: { maxAge: 1.21e+9 }
