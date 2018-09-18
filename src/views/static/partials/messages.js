@@ -5,6 +5,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
+
   <% if(messages.error) { %>
     Validation errors:
     <ul>
@@ -12,6 +13,7 @@
         <li><%= `${err.param} ${err.msg}` %></li>
       <% }) %>
     </ul>
+    
   <% } else { %>
       <p><%= messages.notice %></p>
     <% } %>

@@ -33,13 +33,13 @@ describe("routes : users", () => {
 
   describe("POST /users", () => {
 
-// #1
+    // write a test to confirm that a form with valid values for the attributes creates a user
     it("should create a new user with valid values and redirect", (done) => {
 
       const options = {
         url: base,
         form: {
-          username: "bigJohn",
+          username: "marioBro",
           email: "user@example.com",
           password: "123456789"
         }
@@ -48,7 +48,9 @@ describe("routes : users", () => {
       request.post(options,
         (err, res, body) => {
 
-// #2
+        // When the response returns, we check the users table for a
+        // user with the given email and confirm that it has an ID.
+
           User.findOne({where: {email: "user@example.com"}})
           .then((user) => {
             expect(user).not.toBeNull();
@@ -64,13 +66,13 @@ describe("routes : users", () => {
       );
     });
 
-// #3
+    // We submit a request with invalid values and expect not to create a user
     it("should not create a new user with invalid attributes and redirect", (done) => {
       request.post(
         {
           url: base,
           form: {
-            username: "bigJohnny"
+            username: "luigiBro",
             email: "no",
             password: "123456789"
           }
@@ -90,5 +92,18 @@ describe("routes : users", () => {
     });
 
   });
+
+  describe("GET /users/sign_in", () => {
+
+    it("should render a view with a sign in form", (done) => {
+      request.get(`${base}sign_in`, (err, res, body) => {
+        expect(err).toBeNull();
+        expect(body).toContain("Sign in");
+        done();
+      });
+    });
+
+  });
+
 
 });

@@ -9,12 +9,10 @@
 
     <main class="container">
 
-      <% include ../static/partials/messages.ejs %>
-
       <h2>Welcome to Blocipedia</h2>
        <div class="row">
          <div class="col-md-8">
-           <form action="/users" method="post">
+           <form method="POST" action="/users/sign_up">
              <div class="form-group">
                <label>Name:</label>
                <input type="text" name="name" placeholder="Enter Name" class="form-control"/>

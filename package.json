@@ -30,12 +30,12 @@
     "request": "^2.83.0"
   },
   "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "cryptiles": "^4.1.2",
     "dotenv": "^5.0.0",
     "ejs": "^2.5.7",
-    "ethereumjs-wallet": "^0.6.0",
     "express": "^4.16.2",
     "express-flash": "0.0.2",
     "express-session": "^1.15.6",
@@ -46,6 +46,6 @@
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.32.6",
-    "truffle-hdwallet-provider": "0.0.3"
+    "sequelize-cli": "^4.1.1"
   }
 }
