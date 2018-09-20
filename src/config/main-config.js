@@ -1,4 +1,5 @@
 require("dotenv").config();
+
 const path = require("path");
 const viewsFolder = path.join(__dirname, "..", "views");
 const logger = require('morgan');
@@ -29,6 +30,5 @@ module.exports = {
       res.locals.currentUser = req.user;
       next();
     })
-    // app.use(express.static(path.join(__dirname, "..", "assets")));
   }
 };

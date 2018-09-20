@@ -13,7 +13,7 @@
         <li><%= `${err.param} ${err.msg}` %></li>
       <% }) %>
     </ul>
-    
+
   <% } else { %>
       <p><%= messages.notice %></p>
     <% } %>
