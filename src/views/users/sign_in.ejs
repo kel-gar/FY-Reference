@@ -9,22 +9,26 @@
 
     <main class="container">
 
-
+      <% include ../static/partials/messages.ejs %>
 
       <h1>Sign in</h1>
 
       <form action="/users/sign_in" method="post">
 
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-          <small class="text-muted" id="emailHelp">email address must be a valid address</small>
+          <label>Username:</label>
+          <input type="text" name="username" placeholder="Enter Username" class="form-control"/>
+          <small class="text-muted" id="nameHelp">Username must be unique</small>
         </div>
-
         <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" aria-describedby="passwordHelp" placeholder="Enter password">
-          <small class="text-muted" id="passwordHelp">password must match confirmation below</small>
+          <label>Email:</label>
+          <input type="email" name="email" placeholder="Enter Email" class="form-control"/>
+          <small class="text-muted" id="nameHelp">Email must be valid and unique</small>
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" name="password" placeholder="Enter Password" class="form-control"/>
+          <small class="text-muted" id="nameHelp">Password but be at least 6 characters</small>
         </div>
 
         <button type="submit" class="btn btn-primary">Sign in</button>

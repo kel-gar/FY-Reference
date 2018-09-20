@@ -22,12 +22,12 @@ describe("User", () => {
 // #2: We write a test to ensure the successful creation of a user with the right attribute values.
     it("should create a User object with a valid email and password", (done) => {
       User.create({
-        username: "test-user",
+        username: "testuser",
         email: "user@example.com",
         password: "1234567890"
       })
       .then((user) => {
-        // expect(user.username).toBe("test-user"),
+        expect(user.username).toBe("testuser"),
         expect(user.email).toBe("user@example.com");
         expect(user.id).toBe(1);
         done();
@@ -71,7 +71,7 @@ describe("User", () => {
       .then((user) => {
 
         User.create({
-          username:"luigiBro",
+          username:"marioBro",
           email: "user@example.com",
           password: "nananananananananananananananana BATMAN!"
         })
