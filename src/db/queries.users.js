@@ -15,7 +15,7 @@ module.exports = {
     })
     .then((user) => {
       const msg = {
-        to: 'test@example.com',
+        to: newUser.email,
         from: 'test@example.com',
         subject: 'Thanks for joining Blocipedia!',
         text: 'we are so glad you could join us',
