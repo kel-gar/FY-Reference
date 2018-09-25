@@ -19,7 +19,6 @@ describe("routes : wikis", () => {
        })
        .then((user) => {
          this.user = user;
-         console.log(this.user);
          Wiki.create({
            title: "JS Frameworks",
            body: "There is a lot of them",
@@ -30,8 +29,7 @@ describe("routes : wikis", () => {
             this.wiki = wiki;
             done();
           })
-          .catch((err) => {
-            console.log(err);
+          .catch((err) => {          
             done();
           });
        })
