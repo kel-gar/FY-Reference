@@ -8,18 +8,22 @@
 
     <main class="container">
       <h1><%= wiki.title %></h1>
+      <p><%= wiki.body %></p>
 
-        <p><%= wiki.body %></p>
+      <% if(!currentUser) { %>
+        <small>Please sign up/sign in to create your own wiki topic.</small>
+      <% } %>
 
-        <a href="/wikis/<%= wiki.id %>/edit" class="btn btn-warning">Edit</a>
-
-        <form style="display:initial" action="/wikis/<%= wiki.id %>/destroy" method="post">
-          <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
+      <% if(currentUser) { %>
+          <a href="/wikis/<%= wiki.id %>/edit" class="btn btn-warning">Edit</a>
+          <form style="display:initial" action="/wikis/<%= wiki.id %>/destroy" method="post">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+      <% } %>
 
       <!-- <p><%= wiki.body %></p> -->
 
-      <a href="/wikis/" class="btn btn-success">Wikis Main</a>
+      <a href="/wikis/" class="btn btn-success">Wikis</a>
 
     </main>
 

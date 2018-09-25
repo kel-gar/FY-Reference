@@ -17,6 +17,8 @@ module.exports = {
     return Wiki.create({
       title: newWiki.title,
       body: newWiki.body,
+      private: newWiki.private,
+      userId: newWiki.userId
     })
     .then((wiki) => {
       callback(null, wiki);
@@ -55,7 +57,6 @@ module.exports = {
         return callback("Wiki not found");
       }
 
-//#1
       wiki.update(updatedWiki, {
         fields: Object.keys(updatedWiki)
       })
