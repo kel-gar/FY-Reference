@@ -12,6 +12,11 @@
         <li class="nav-item">
           <a class="nav-link" href="/wikis">Wikis</a>
         </li>
+        <% if(currentUser && currentUser.role != "standard") { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/wikis/private">Private Wikis</a>
+          </li>
+        <% }%>
         <% if(currentUser) { %>
           <li class="nav-item">
             <a class="nav-link" href="/users/account">Account</a>
