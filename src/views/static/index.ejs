@@ -11,29 +11,11 @@
         <header class="jumbotron my-4">
           <h1 class="display-4">Welcome to Blocipedia</h1>
           <p class="lead">An wiki app.</p>
+          <% if (!currentUser) { %>
           <a href="/users/sign_up" class="btn btn-primary btn-lg">Sign up</a>
+          <% } %>
         </header>
 
-        <!-- Page Features -->
-        <section class="row text-center">
-
-          <!-- <section class="col-lg-4">
-            <h4 class="card-title">Post</h4>
-            <p class="card-text">Share your thoughts about subjects that are important to you.</p>
-          </section>
-
-          <section class="col-lg-4">
-            <h4 class="card-title">Comment</h4>
-            <p class="card-text">Your opinion counts! But you have to make yourself heard first!</p>
-          </section>
-
-          <section class="col-lg-4">
-            <h4 class="card-title">Stay Informed</h4>
-            <p class="card-text">See the most active topics as well as trending subjects every day!</p>
-          </section> -->
-
-        </section>
-        <!-- /.row -->
 
       </main>
       <!-- /.container -->
