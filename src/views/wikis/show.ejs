@@ -8,7 +8,7 @@
 
     <main class="container">
       <h1><%= wiki.title %></h1>
-      <p><%= wiki.body %></p>
+      <!-- <p><%= wiki.body %></p> -->
 
       <% if(!currentUser) { %>
         <small>Please sign up/sign in to create your own wiki topic.</small>
@@ -20,11 +20,9 @@
             <button type="submit" class="btn btn-danger">Delete</button>
           </form>
       <% } %>
-
-      <!-- <p><%= wiki.body %></p> -->
-
       <a href="/wikis/" class="btn btn-success">Wikis</a>
-
+      <hr>
+      <p><%- wiki.body %></p>
     </main>
 
 
