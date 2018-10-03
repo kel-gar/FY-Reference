@@ -69,7 +69,6 @@ module.exports = {
          amount: 1500,
          currency: "usd",
          customer: customer.id,
-         // source: 'tok_visa',
          description: "Premium membership"
        })
      })
@@ -86,5 +85,17 @@ module.exports = {
     wikiQueries.makePrivate(req.user.dataValues.id);
     req.flash("notice", "You have downgraded your account!");
     res.redirect("/");
+  },
+  showCollaborations(req, res, next) {
+    userQueries.getUser(req.user.id, (err, result) => {
+      user = result["user"];
+      collaborations = result["collaborations"];
+      if(err || user == null) {
+          res.redirect(404, "/");
+      } else {
+          res.render("users/collaborations", {user, collaborations});
+          }
+    });
   }
+
 }

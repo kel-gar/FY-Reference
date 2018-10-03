@@ -14,5 +14,6 @@ router.get("/users/upgrade", userController.seeUpgrade);
 router.post("/users/:id/upgrade", userController.pay);
 router.get("/users/upgrade-success", userController.seeUpgradeSuccess);
 router.post("/users/:id/downgrade", userController.downgrade);
+router.get("/users/collaborations", userController.showCollaborations);
 
 module.exports = router;

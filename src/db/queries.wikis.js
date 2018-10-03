@@ -1,4 +1,6 @@
 const Wiki = require("./models").Wiki;
+const Collaborator = require("./models").Collaborators;
+const User = require("./models").User;
 
 module.exports = {
 
@@ -29,12 +31,22 @@ module.exports = {
   },
 
   getWiki(id, callback){
+    let result = {};
     return Wiki.findById(id)
     .then((wiki) => {
-      callback(null, wiki);
+        if(!wiki){
+            callback(404);
+        } else {
+            result["wiki"] = wiki;
+            Collaborator.scope({method: ["collaboratorsFor", id]}).all()
+            .then((collaborators) => {
+                result["collaborators"] = collaborators;
+                callback(null, result);
+            })
+        }
     })
     .catch((err) => {
-      callback(err);
+        callback(err);
     })
   },
 

@@ -29,7 +29,7 @@ describe("routes : wikis", () => {
             this.wiki = wiki;
             done();
           })
-          .catch((err) => {          
+          .catch((err) => {
             done();
           });
        })
