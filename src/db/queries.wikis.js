@@ -1,5 +1,5 @@
 const Wiki = require("./models").Wiki;
-const Collaborator = require("./models").Collaborators;
+const Collaborator = require("./models").Collaborator;
 const User = require("./models").User;
 
 module.exports = {
@@ -48,6 +48,7 @@ module.exports = {
     .catch((err) => {
         callback(err);
     })
+
   },
 
   deleteWiki(id, callback){

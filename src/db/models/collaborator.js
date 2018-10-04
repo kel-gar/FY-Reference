@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: "CASCADE"
     });
 
-    Collaborator.addScope("collaboratorFor", (wikiId) => {
+    Collaborator.addScope("collaboratorsFor", (wikiId) => {
       return {
       include: [{
         model: models.User
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       order: [["createdAt", "ASC"]]
       }
     });
-    
+
     Collaborator.addScope("userCollaborationsFor", (userId) => {
       return{
         include: [{

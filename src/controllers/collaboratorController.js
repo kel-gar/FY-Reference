@@ -8,7 +8,7 @@ module.exports = {
     wikiQueries.getWiki(req.params.wikiId, (err, result) => {
       wiki = result["wiki"];
       collaborators = result["collaborators"];
-      
+
       if(err || wiki == null) {
           res.redirect(404, "/");
       } else {

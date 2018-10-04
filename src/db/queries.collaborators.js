@@ -1,7 +1,7 @@
 const Collaborator = require("./models").Collaborator;
 const Wiki = require("./models").Wiki;
 const User = require("./models").User;
-const Authorizer = require("../policies/collaborator");
+const Authorizer = require("../policies/application");
 
 module.exports = {
 
@@ -23,14 +23,12 @@ module.exports = {
       })
       .then((collaborator) => {
         if(collaborator) {
-          // console.log('error! This collaborator already exists');
           return callback('This user is already a collaborator on this wiki.')
         }
         let newCollaborator = {
           userId: user.id,
           wikiId: req.params.wikiId
         };
-        // console.log(newCollaborator);
         return Collaborator.create(newCollaborator)
         .then((collaborator) => {
           callback(null, collaborator);
