@@ -13,7 +13,7 @@ describe("routes : collaborators", () => {
     sequelize.sync({force: true}).then((res) => {
 
       User.create({
-        username: "starman",
+        username: "starGuy",
         email: "starman@tesla.com",
         password: "Trekkie4lyfe"
       })
@@ -67,15 +67,15 @@ describe("routes : collaborators", () => {
       const options = {
         url: `${base}${this.wiki.id}/collaborators/create`,
         form: {
-          username: "starman"
+          userId: this.user.id
         }
       };
       request.post(options,
         (err, res, body) => {
-          Collaborator.findOne({where: {username: "starman"}})
+          Collaborator.findOne({where: {userId: this.user.id}})
           .then((collaborator) => {
             expect(collaborator).not.toBeNull();
-            expect(collaborator.username).toBe("starman");
+            expect(collaborator.userId).toBe(this.user.id);
             done();
           })
           .catch((err) => {
