@@ -23,7 +23,7 @@ validateWikis(req, res, next) {
   if(req.method === "POST") {
 
     req.checkBody("title", "must be at least 2 characters in length").isLength({min: 2});
-    req.checkBody("description", "must be at least 2 characters in length").isLength({min: 2});
+    req.checkBody("body", "must be at least 2 characters in length").isLength({min: 2});
   }
 
   const errors = req.validationErrors();

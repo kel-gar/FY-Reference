@@ -44,7 +44,7 @@ describe("Wiki", () => {
          done();
        })
        .catch((err) => {
-         console.log(err);
+         // console.log(err);
          done();
        });
      });

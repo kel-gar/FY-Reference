@@ -50,7 +50,7 @@ module.exports = {
     let result = {};
     User.findById(id)
     .then((user) => {
-      // console.log(user);
+      console.log(user);
         if(!user){
             callback(404);
         } else {
