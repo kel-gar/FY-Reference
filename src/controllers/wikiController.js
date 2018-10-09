@@ -7,7 +7,6 @@ module.exports = {
   index(req, res, next){
     wikiQueries.getAllWikis((err, wikis) => {
       if(err){
-        // console.log(err);
         res.redirect(500, "static/index");
       } else {
         res.render("wikis/index", {wikis});
@@ -27,40 +26,22 @@ module.exports = {
 
   new(req, res, next){
     res.render("wikis/new");
-    // console.log(wiki)
   },
 
-  // create(req, res, next){
-  //   let newWiki = {
-  //     title: req.body.title,
-  //     body: req.body.body,
-  //     private: req.body.private,
-  //     userId: req.user.id
-  //   };
-  //   wikiQueries.addWiki(newWiki, (err, wiki) => {
-  //     if(err){
-  //       // console.log(err);
-  //       res.redirect(500, "/wikis/new");
-  //       // console.log(err);
-  //     } else {
-  //       res.redirect(303, `/wikis/${wiki.id}`);
-  //     }
-  //     // console.log(err);
-  //   });
-  // },
   create(req, res, next){
     console.log(req.body);
     let newWiki = {
       title: req.body.title,
       body: req.body.body,
       private: req.body.private,
-      userId: req.body.userId
+      userId: req.user.id
     };
     wikiQueries.addWiki(newWiki, (err, wiki) => {
       if(err){
         console.log(err);
         res.redirect(500, "/wikis/new");
       } else {
+        console.log(newWiki);
         res.redirect(303, `/wikis/${wiki.id}`);
       }
     });
